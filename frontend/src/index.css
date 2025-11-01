@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.nav-link{
+  margin-left: 20px;
+}
+.lightning-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.lightning-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+}
+
+.lightning-btn:hover::before {
+  left: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.lightning-btn:hover {
+  background-color: #d77f0b;
+}
