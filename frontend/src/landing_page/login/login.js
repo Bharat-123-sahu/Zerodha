@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 
 const Login = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -38,7 +38,8 @@ const Login = () => {
 
       if (data.message === "User login successful") {
         handleSuccess("Login Successful! Redirecting...");
-        setTimeout(() => navigate("/home"), 1500);
+        // setTimeout(() => navigate("http://localhost:4000/"), 1500);
+        window.location.href = "http://localhost:4000";
       } else {
         handleError(data.message || "Login failed");
       }

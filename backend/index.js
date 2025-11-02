@@ -15,10 +15,13 @@ import { userVerification } from "./middleware/Authmiddleware.js";
 const app = express();
 app.use(cookieParser());
 config();
-app.use(cors({
-  origin: "http://localhost:3000", // React app URL
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    origin: "http://localhost:4000", // React app URL
+    credentials: true,
+  })
+);
 app.use(express.json());
 const uri = process.env.MONGO_URL;
 const PORT = process.env.PORT || 1245;
@@ -277,7 +280,7 @@ app.post("/login", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-app.post("/",userVerification);
+app.post("/", userVerification);
 
 app.listen(PORT, () => {
   console.log(

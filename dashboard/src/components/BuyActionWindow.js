@@ -45,7 +45,7 @@ const BuyActionWindow = ({ uid }) => {
       await axios.post("http://localhost:1245/newOrder", {
         name: uid,
         qty: stockQuantity,
-        price: stockPrice*stockQuantity,
+        price: stockPrice * stockQuantity,
         mode: "BUY",
       });
 
@@ -77,7 +77,7 @@ const BuyActionWindow = ({ uid }) => {
             <legend>Price</legend>
             <input
               type="number"
-              value={stockPrice*stockQuantity}
+              value={stockPrice * stockQuantity}
               readOnly
               style={{ backgroundColor: "#f3f3f3" }}
             />
