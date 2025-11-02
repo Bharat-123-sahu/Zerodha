@@ -15,10 +15,10 @@ import { userVerification } from "./middleware/Authmiddleware.js";
 const app = express();
 app.use(cookieParser());
 config();
+const allOrigin = ["http://localhost:3000", "http://localhost:4000"];
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    origin: "http://localhost:4000", // React app URL
+    origin: allOrigin, // React app URL
     credentials: true,
   })
 );
