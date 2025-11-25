@@ -8,7 +8,7 @@ const Orders = () => {
   const [orderdata, setOrderdata] = useState([]);
   useEffect(() => {
     const fetching = async () => {
-      const res = await axios.get("http://localhost:1245/allorder");
+      const res = await axios.get("https://zerodha-1-pkeu.onrender.com/allorder");
       setOrderdata(res.data);
     };
     fetching();

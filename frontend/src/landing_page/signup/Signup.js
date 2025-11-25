@@ -34,7 +34,7 @@ const Signup = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        "http://localhost:1245/signup",
+        "https://zerodha-1-pkeu.onrender.com/signup",
         { ...inputValue },
         { withCredentials: true }
       );

@@ -18,7 +18,7 @@ const SellActionWindow = ({ uid }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:1245/allorder");
+        const res = await axios.get("https://zerodha-1-pkeu.onrender.com/allorder");
         const orders = Array.isArray(res.data) ? res.data : res.data.data || [];
 
         const relatedOrders = orders.filter((order) => order.name === uid);
@@ -73,7 +73,7 @@ const SellActionWindow = ({ uid }) => {
       return alert(`⚠️ You only own ${ownedQty} shares. Reduce the quantity.`);
 
     try {
-      await axios.post("http://localhost:1245/newOrder", {
+      await axios.post("https://zerodha-1-pkeu.onrender.com/newOrder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice * stockQuantity, // ✅ sending total

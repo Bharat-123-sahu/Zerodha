@@ -7,7 +7,7 @@ const Positions = () => {
   const [positiondata,setPositiondata]=useState([])
   useEffect(()=>{
     const fetchdata=async ()=>{
-      const res = await axios.get("http://localhost:1245/allposition")
+      const res = await axios.get("https://zerodha-1-pkeu.onrender.com/allposition")
       setPositiondata(res.data)
     }
     fetchdata();

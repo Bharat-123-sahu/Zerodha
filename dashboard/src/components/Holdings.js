@@ -8,7 +8,7 @@ const Holding = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const res = await axios.get("http://localhost:1245/allholding");
+        const res = await axios.get("https://zerodha-1-pkeu.onrender.com/allholding");
         setHoldingdata(res.data);
       } catch (err) {
         console.error("Error fetching holdings:", err);

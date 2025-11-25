@@ -42,7 +42,7 @@ const BuyActionWindow = ({ uid }) => {
     if (stockQuantity <= 0) return alert("⚠️ Quantity must be at least 1!");
 
     try {
-      await axios.post("http://localhost:1245/newOrder", {
+      await axios.post("https://zerodha-1-pkeu.onrender.com/newOrder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice * stockQuantity,
