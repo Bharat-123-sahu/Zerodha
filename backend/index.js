@@ -16,8 +16,8 @@ const app = express();
 app.use(cookieParser());
 config();
 const allOrigin = [
-  "https://zerodha-1-nine.vercel.app/",
-  "https://zerodha-cyan-ten.vercel.app/",
+  "https://zerodha-1-nine.vercel.app",
+  "https://zerodha-cyan-ten.vercel.app",
 ];
 app.use(
   cors({
