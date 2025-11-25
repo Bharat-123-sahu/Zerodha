@@ -39,7 +39,7 @@ const Login = () => {
       if (data.message === "User login successful") {
         handleSuccess("Login Successful! Redirecting...");
         // setTimeout(() => navigate("http://localhost:4000/"), 1500);
-        window.location.href = "zerodha-cyan-ten.vercel.app";
+        window.location.href = "https://zerodha-cyan-ten.vercel.app/";
       } else {
         handleError(data.message || "Login failed");
       }
