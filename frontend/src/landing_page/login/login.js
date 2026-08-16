@@ -31,7 +31,7 @@ const Login = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        "https://zerodha-1-pkeu.onrender.com/login",
+        "https://zerodha-qaga.onrender.com/login",
         { ...inputValue },
         { withCredentials: true }
       );
