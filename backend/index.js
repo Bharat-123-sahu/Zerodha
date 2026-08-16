@@ -23,7 +23,7 @@ app.use(
   cors({
     origin: allOrigin, // React app URL
     credentials: true,
-  })
+  }),
 );
 app.use(express.json());
 
@@ -278,11 +278,17 @@ app.post("/login", async (req, res) => {
   }
 });
 app.post("/", userVerification);
+const PORT = process.env.PORT || 1234;
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log("MongoDB connected successfully");
 
-app.listen(process.env.PORT, () => {
-  console.log(
-    `the app is running on this${process.env.PORT} success run on port `
-  );
-  mongoose.connect(process.env.MONGO_URL);
-  console.log("db connect");
-});
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection failed:", err.message);
+    process.exit(1);
+  });
